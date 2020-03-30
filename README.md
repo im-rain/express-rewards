@@ -13,7 +13,57 @@ npm run dev
 npm run test
 
 ```
-## Test
+### Data Storing
+Generated rewards are persisted in a json files in src/files folder.  
+Filename is the date of sunday of the week where the requested reward date belongs:  
+Ex. /users/1/rewards?at=2020-03-19T12:00:00Z.  
+User 1 rewards from 2020-03-15T00:00:00Z to 2020-03-21T00:00:00Z is generated.  
+since 2020-03-15T00:00:00Z is sunday, data will stored in 2020-03-15.json with user as key.  
+#### 2020-03-15.json
+```json
+{
+    "1": {
+        "data": [
+            {
+                "availableAt": "2020-03-15T00:00:00Z",
+                "redeemedAt": null,
+                "expiresAt": "2020-03-16T00:00:00Z"
+            },
+            {
+                "availableAt": "2020-03-16T00:00:00Z",
+                "redeemedAt": null,
+                "expiresAt": "2020-03-17T00:00:00Z"
+            },
+            {
+                "availableAt": "2020-03-17T00:00:00Z",
+                "redeemedAt": null,
+                "expiresAt": "2020-03-18T00:00:00Z"
+            },
+            {
+                "availableAt": "2020-03-18T00:00:00Z",
+                "redeemedAt": null,
+                "expiresAt": "2020-03-19T00:00:00Z"
+            },
+            {
+                "availableAt": "2020-03-19T00:00:00Z",
+                "redeemedAt": null,
+                "expiresAt": "2020-03-20T00:00:00Z"
+            },
+            {
+                "availableAt": "2020-03-20T00:00:00Z",
+                "redeemedAt": null,
+                "expiresAt": "2020-03-21T00:00:00Z"
+            },
+            {
+                "availableAt": "2020-03-21T00:00:00Z",
+                "redeemedAt": null,
+                "expiresAt": "2020-03-22T00:00:00Z"
+            }
+        ]
+    }
+}
+```
+### API Test
 ``` bash
 Generate reward
 http://localhost:8081/users/[user]/rewards?at=[date(YYYY-MM-DDThh:mm:ssZ)]
