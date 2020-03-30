@@ -18,7 +18,7 @@ Generated rewards are persisted in a json files in src/files folder.
 Filename is the date of sunday of the week where the requested reward date belongs:  
 Ex. /users/1/rewards?at=2020-03-19T12:00:00Z.  
 User 1 rewards from 2020-03-15T00:00:00Z to 2020-03-21T00:00:00Z is generated.  
-since 2020-03-15T00:00:00Z is sunday, data will stored in 2020-03-15.json with user as key.  
+since 2020-03-15T00:00:00Z is sunday, data will be stored in 2020-03-15.json with user as key.  
 #### 2020-03-15.json
 ```json
 {
